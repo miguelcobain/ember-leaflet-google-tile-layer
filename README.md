@@ -3,7 +3,7 @@
 This addon extends [ember-leaflet](http://www.ember-leaflet.com/) 2.0. It adds a `{{google-tile-layer}}` component that displays google tile layers.
 This uses [this leaflet extension](https://github.com/shramov/leaflet-plugins/blob/master/layer%2Ftile%2FGoogle.js) to accomplish that. It also automatically adds google maps script to your `<head>` (see Installation section below).
 
-Note that this approach **isn't** using google tile layers directly, as the violates google's terms. Instead, it wraps the google maps API, and proxies leaflet inputs to it. At any rate, this addon just wraps @shramov's implementation. It has a very reasonable performance, but only use this if you really want Google's tiles.
+Note that this approach **isn't** using google tile layers directly, as that violates google's terms. Instead, it wraps google maps API, and proxies leaflet inputs to it. At any rate, this addon just wraps @shramov's implementation. It has a very reasonable performance, but only use this if you really need Google's tiles.
 
 ## Usage
 
