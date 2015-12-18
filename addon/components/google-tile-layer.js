@@ -7,7 +7,7 @@ export default BaseLayer.extend({
   ],
 
   leafletOptions: [
-    'mapOptions', 'attribution', 'opacity'
+    'mapOptions', 'attribution', 'opacity', 'maxZoom'
   ],
 
   leafletEvents: [

@@ -1,5 +1,6 @@
 <h2 id="title">Welcome to Ember</h2>
 
-{{#leaflet-map lat=51.512983 lng=-0.138289 zoom=12}}
-  {{google-tile-layer type="TERRAIN" opacity=0.7 attribution="Çup?"}}
+{{#leaflet-map lat=51.512983 lng=-0.138289 zoom=zoom onZoomend=(action zoomEnd)}}
+  {{google-tile-layer type="TERRAIN" opacity=0.7 attribution="Çup?" maxZoom=20}}
 {{/leaflet-map}}
+{{zoom}}
