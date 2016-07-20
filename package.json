@@ -46,7 +46,8 @@
     "leaflet"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.5"
+    "ember-cli-babel": "^5.1.5",
+    "ember-cli-version-checker": "^1.1.6"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",

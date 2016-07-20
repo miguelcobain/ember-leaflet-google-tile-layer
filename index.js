@@ -1,11 +1,19 @@
 /* jshint node: true */
 'use strict';
+var VersionChecker = require('ember-cli-version-checker');
 
 module.exports = {
   name: 'ember-leaflet-google-tile-layer',
   included: function(app) {
-   //import javascript
-   app.import(app.bowerDirectory + '/leaflet-plugins/layer/tile/Google.js');
+    var checker = new VersionChecker(this);
+    var dep = checker.for('leaflet', 'bower');
+
+    // import correct javascript based on leaflet version
+    if (dep.isAbove('0.7.7')) {
+      app.import('vendor/current/Google.js');
+    } else {
+      app.import('vendor/0.7.7/Google.js');
+    }
   },
 
   contentFor: function(type, config) {
