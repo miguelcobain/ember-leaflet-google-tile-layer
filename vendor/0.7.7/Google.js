@@ -5,8 +5,6 @@
 /* global google: true */
 
 L.Google = L.Class.extend({
-	includes: L.Mixin.Events,
-
 	options: {
 		minZoom: 0,
 		maxZoom: 18,
@@ -30,6 +28,14 @@ L.Google = L.Class.extend({
 		if (!this._ready) L.Google.asyncWait.push(this);
 
 		this._type = type || 'SATELLITE';
+
+    var version = L.version.split('.');
+    //If Version is >= 1.2.0
+    if (parseInt(version[0], 10) === 1 && parseInt(version[1], 10) >= 2) {
+      L.Google.include(L.Evented.prototype);
+    } else {
+      L.Google.include(L.Mixin.Events);
+    }
 	},
 
 	onAdd: function (map, insertAtTheBottom) {
